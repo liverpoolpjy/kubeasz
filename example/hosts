@@ -5,8 +5,8 @@
 # etcd集群请提供如下NODE_NAME、NODE_IP变量,注意etcd集群必须是1,3,5,7...奇数个节点
 [etcd]
 10.64.3.4 NODE_NAME=etcd1 NODE_IP="10.64.3.4"
-10.64.3.7 NODE_NAME=etcd1 NODE_IP="10.64.3.7"
-10.64.3.15 NODE_NAME=etcd1 NODE_IP="10.64.3.15"
+10.64.3.7 NODE_NAME=etcd2 NODE_IP="10.64.3.7"
+10.64.3.15 NODE_NAME=etcd3 NODE_IP="10.64.3.15"
 
 [kube-master]
 10.64.3.4 NODE_IP="10.64.3.4"
