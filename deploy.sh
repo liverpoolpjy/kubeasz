@@ -49,6 +49,12 @@ mv bin/* /etc/ansible/bin
 cd /etc/ansible
 cp example/hosts hosts
 
+# 测试连通性
+ansible all -m ping
+# 如果不通先ssh试试
+# ssh 10.64.3.x
+
+
 # 一部安装
 ansible-playbook 90.setup.yml
 
