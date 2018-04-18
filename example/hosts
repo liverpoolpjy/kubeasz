@@ -6,7 +6,7 @@
 [etcd]
 10.64.3.7 NODE_NAME=etcd1 NODE_IP="10.64.3.7"
 10.64.3.11 NODE_NAME=etcd2 NODE_IP="10.64.3.11"
-10.64.3.3 NODE_NAME=etcd3 NODE_IP="10.64.3.3"
+10.64.3.4 NODE_NAME=etcd3 NODE_IP="10.64.3.4"
 
 [kube-master]
 10.64.3.7 NODE_IP="10.64.3.7"
@@ -14,7 +14,7 @@
 [kube-node]
 10.64.3.7 NODE_IP="10.64.3.7"
 10.64.3.11 NODE_IP="10.64.3.11"
-10.64.3.3 NODE_IP="10.64.3.3"
+10.64.3.4 NODE_IP="10.64.3.4"
 
 # 如果启用harbor，请配置后面harbor相关参数
 [harbor]
@@ -71,10 +71,10 @@ CLUSTER_DNS_SVC_IP="10.68.0.2"
 CLUSTER_DNS_DOMAIN="cluster.local."
 
 # etcd 集群间通信的IP和端口, **根据实际 etcd 集群成员设置**
-ETCD_NODES="etcd1=https://10.64.3.7:2380,etcd2=https://10.64.3.11:2380,etcd3=https://10.64.3.3:2380"
+ETCD_NODES="etcd1=https://10.64.3.7:2380,etcd2=https://10.64.3.11:2380,etcd3=https://10.64.3.4:2380"
 
 # etcd 集群服务地址列表, **根据实际 etcd 集群成员设置**
-ETCD_ENDPOINTS="https://10.64.3.7:2379,https://10.64.3.11:2379,https://10.64.3.3:2379"
+ETCD_ENDPOINTS="https://10.64.3.7:2379,https://10.64.3.11:2379,https://10.64.3.4:2379"
 
 # 集群basic auth 使用的用户名和密码
 BASIC_AUTH_USER="admin"
