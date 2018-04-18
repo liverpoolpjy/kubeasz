@@ -69,11 +69,13 @@ kubectl create -f /etc/ansible/manifests/heapster/
 
 # 安装dashboard
 # 部署dashboard 主yaml配置文件
-$ kubectl create -f /etc/ansible/manifests/dashboard/kubernetes-dashboard.yaml
+# kubectl create -f /etc/ansible/manifests/dashboard/kubernetes-dashboard.yaml
 # 部署基本密码认证配置[可选]，密码文件位于 /etc/kubernetes/ssl/basic-auth.csv
-$ kubectl create -f /etc/ansible/manifests/dashboard/ui-admin-rbac.yaml
-$ kubectl create -f /etc/ansible/manifests/dashboard/ui-read-rbac.yaml
-
+# kubectl create -f /etc/ansible/manifests/dashboard/ui-admin-rbac.yaml
+# kubectl create -f /etc/ansible/manifests/dashboard/ui-read-rbac.yaml
+# kubectl create -f /etc/ansible/manifests/dashboard/admin-user-sa-rbac.yaml
+# 拿到登录token
+# kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
 
 # 访问https://{{ ip }}:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
 
