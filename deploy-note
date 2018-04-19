@@ -4,12 +4,12 @@
 # ssh-keygen -t rsa -P ''
 # 以root权限复制到authorized_keys
 # cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-# 再分发到各个worker服务器
+# 再分发到各个worker服务器的~/.ssh/authorized_keys文件
 # 分别测试是否可以连接
 # ssh ip
 
 
-
+# 更换ubuntu源
 sudo cat >/etc/apt/sources.list<<EOF
 deb-src http://archive.ubuntu.com/ubuntu xenial main restricted #Added by software-properties
 deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted
@@ -32,8 +32,11 @@ EOF
 
 sudo apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 
+# 安装python
 apt-get install python2.7 git python-pip -y
 
+
+# 安装python包
 pip install pip --upgrade -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 pip install --no-cache-dir ansible -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 
@@ -41,6 +44,7 @@ git clone https://github.com/liverpoolpjy/kubeasz.git
 mkdir -p /etc/ansible
 mv kubeasz/* /etc/ansible
 
+# 提前下载k8s.193.tar.gz，并放入/tmp
 # 解压二进制包，放入/etc/ansible/bin
 cd /tmp
 tar zxvf k8s.193.tar.gz
