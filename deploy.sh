@@ -32,7 +32,7 @@ EOF
 
 sudo apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 
-apt-get install python2.7 git python-pip
+apt-get install python2.7 git python-pip -y
 
 pip install pip --upgrade -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 pip install --no-cache-dir ansible -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
