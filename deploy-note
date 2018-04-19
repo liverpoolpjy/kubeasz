@@ -51,6 +51,8 @@ tar zxvf k8s.193.tar.gz
 mv bin/* /etc/ansible/bin
 
 cd /etc/ansible
+
+# 提前把example/hosts文件按照实际情况改好
 cp example/hosts hosts
 
 # 测试连通性
