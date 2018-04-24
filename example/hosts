@@ -1,25 +1,25 @@
 # 部署节点：运行ansible 脚本的节点
 [deploy]
-10.64.3.7
+192.168.88.134
 
 # etcd集群请提供如下NODE_NAME、NODE_IP变量,注意etcd集群必须是1,3,5,7...奇数个节点
 [etcd]
-10.64.3.7 NODE_NAME=etcd1 NODE_IP="10.64.3.7"
-10.64.3.11 NODE_NAME=etcd2 NODE_IP="10.64.3.11"
-10.64.3.4 NODE_NAME=etcd3 NODE_IP="10.64.3.4"
+192.168.88.134 NODE_NAME=etcd1 NODE_IP="192.168.88.134"
+192.168.88.144 NODE_NAME=etcd2 NODE_IP="192.168.88.144"
+192.168.88.146 NODE_NAME=etcd3 NODE_IP="192.168.88.146"
 
 [kube-master]
-10.64.3.7 NODE_IP="10.64.3.7"
+192.168.88.134 NODE_IP="192.168.88.134"
 
 [kube-node]
-10.64.3.7 NODE_IP="10.64.3.7"
-10.64.3.11 NODE_IP="10.64.3.11"
-10.64.3.4 NODE_IP="10.64.3.4"
+192.168.88.134 NODE_IP="192.168.88.134"
+192.168.88.144 NODE_IP="192.168.88.144"
+192.168.88.146 NODE_IP="192.168.88.146"
 
 # 如果启用harbor，请配置后面harbor相关参数
 [harbor]
 #192.168.1.8 NODE_IP="192.168.1.8"
-10.64.3.11 NODE_IP="10.64.3.11"
+192.168.88.144 NODE_IP="192.168.88.144"
 
 # 预留组，后续添加node节点使用
 [new-node]
@@ -32,10 +32,10 @@
 DEPLOY_MODE=single-master
 
 #集群 MASTER IP
-MASTER_IP="10.64.3.7"
+MASTER_IP="192.168.88.134"
 
 #集群 APISERVER
-KUBE_APISERVER="https://10.64.3.7:6443"
+KUBE_APISERVER="https://192.168.88.134:6443"
 
 #TLS Bootstrapping 使用的 Token，使用 head -c 16 /dev/urandom | od -An -t x | tr -d ' ' 生成
 BOOTSTRAP_TOKEN="d18f94b5fa585c7123f56803d925d2e7"
@@ -71,10 +71,10 @@ CLUSTER_DNS_SVC_IP="10.68.0.2"
 CLUSTER_DNS_DOMAIN="cluster.local."
 
 # etcd 集群间通信的IP和端口, **根据实际 etcd 集群成员设置**
-ETCD_NODES="etcd1=https://10.64.3.7:2380,etcd2=https://10.64.3.11:2380,etcd3=https://10.64.3.4:2380"
+ETCD_NODES="etcd1=https://192.168.88.134:2380,etcd2=https://192.168.88.144:2380,etcd3=https://192.168.88.146:2380"
 
 # etcd 集群服务地址列表, **根据实际 etcd 集群成员设置**
-ETCD_ENDPOINTS="https://10.64.3.7:2379,https://10.64.3.11:2379,https://10.64.3.4:2379"
+ETCD_ENDPOINTS="https://192.168.88.134:2379,https://192.168.88.144:2379,https://192.168.88.146:2379"
 
 # 集群basic auth 使用的用户名和密码
 BASIC_AUTH_USER="admin"
@@ -91,5 +91,5 @@ ca_dir="/etc/kubernetes/ssl"
 base_dir="/etc/ansible"
 
 #私有仓库 harbor服务器 (域名或者IP)
-HARBOR_IP="10.64.3.11"
+HARBOR_IP="192.168.88.144"
 #HARBOR_DOMAIN="harbor.yourdomain.com"
